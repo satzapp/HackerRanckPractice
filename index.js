@@ -20,17 +20,24 @@ function plusMinus(arr) {
 // console.log(plusMinus([-4, 3, -9, 0, 4, 1]));
 
 function miniMaxSum(arr) {
-    // Write your code here
+  // Write your code here
   let minIndex = [...arr].indexOf(Math.min(...arr));
   let maxIndex = [...arr].indexOf(Math.max(...arr));
   let minArr = [...arr];
   let maxArr = [...arr];
-  
-  minArr.splice(minIndex,1);
-  maxArr.splice(maxIndex,1);
-  let minVal = minArr.reduce((a,b) => a+b,0);
-  let maxVal = maxArr.reduce((a,b) => a+b,0);
+
+  minArr.splice(minIndex, 1);
+  maxArr.splice(maxIndex, 1);
+  let minVal = minArr.reduce((a, b) => a + b, 0);
+  let maxVal = maxArr.reduce((a, b) => a + b, 0);
   console.log(maxVal + ' ' + minVal);
 }
 let input = [7, 69, 2, 221, 8974];
-miniMaxSum(input);
+// miniMaxSum(input);
+
+function birthdayCakeCandles(candles) {
+  let maxCandleCount = candles.filter((val) => (val === Math.max(...candles)))?.length;
+  console.log(maxCandleCount);
+}
+// let candles = [3, 2, 1, 3];
+// birthdayCakeCandles(candles);
