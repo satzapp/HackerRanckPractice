@@ -21,9 +21,16 @@ function plusMinus(arr) {
 
 function miniMaxSum(arr) {
     // Write your code here
-    let a = (arr.slice(0,4)).reduce((a,b) => a+b,0);
-    let b = (arr.slice(1,5)).reduce((a,b) => a+b,0);
-    console.log(a + ' ' + b);
+  let minIndex = [...arr].indexOf(Math.min(...arr));
+  let maxIndex = [...arr].indexOf(Math.max(...arr));
+  let minArr = [...arr];
+  let maxArr = [...arr];
+  
+  minArr.splice(minIndex,1);
+  maxArr.splice(maxIndex,1);
+  let minVal = minArr.reduce((a,b) => a+b,0);
+  let maxVal = maxArr.reduce((a,b) => a+b,0);
+  console.log(maxVal + ' ' + minVal);
 }
-
-miniMaxSum([1,2,3,4,5]);
+let input = [7, 69, 2, 221, 8974];
+miniMaxSum(input);
