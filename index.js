@@ -17,4 +17,4 @@ function plusMinus(arr) {
   console.log(Number(zeroCount / arrLength).toFixed(6));
 }
 
-console.log(plusMinus([-4, 3, -9, 0, 4, 1]));
+// console.log(plusMinus([-4, 3, -9, 0, 4, 1]));
