@@ -41,3 +41,65 @@ function birthdayCakeCandles(candles) {
 }
 // let candles = [3, 2, 1, 3];
 // birthdayCakeCandles(candles);
+
+function timeConversion(s) {
+  let [hrs, mins, secWithModifier] = s.split(':');
+  let sWithM = secWithModifier.match(/(\d+)([A-Za-z]+)/);
+  if (hrs === '12') {
+    hrs = '00';
+  }
+  if (sWithM[2] === 'PM') {
+    hrs = parseInt(hrs, 10) + 12;
+  }
+  console.log(`${hrs}:${mins}:${sWithM[1]}`)
+}
+
+// timeConversion("07:05:45PM");
+
+let grades = [73, 67, 38, 33 ];
+
+function gradingStudents(grades) {
+    // Write your code here
+    
+    for(let i=0;i<grades.length; i++) {
+      let divisible = grades[i]%5;
+      if(divisible >= 3 && grades[i] > 37) {
+          console.log(Math.ceil(grades[i] / 5) * 5);
+      } else {
+        console.log(grades[i])
+      }
+    }
+}
+
+// gradingStudents(grades);
+
+// oranges and apple distance
+
+// 7 11
+// 5 15
+// 3 2
+// -2 2 1
+// 5 -6
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+    // Write your code here
+    let apCount = 0;
+    let orCount = 0;
+    
+    for(let i=0;i<apples.length;i++) {
+        let pos = a + apples[i];
+        if(pos >= s && pos <= t) {
+            apCount++;
+        }
+    }
+    
+    for(let i=0;i<oranges.length;i++) {
+        let pos = b + oranges[i];
+        if(pos >= s && pos <= t) {
+            orCount++;
+        }
+    }
+    
+    console.log(apCount);
+    console.log(orCount);
+}
+
